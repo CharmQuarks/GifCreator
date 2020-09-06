@@ -1,3 +1,7 @@
+/*
+https://memorynotfound.com/generate-gif-image-java-delay-infinite-loop-example/
+*/
+
 import javax.imageio.*;
 import javax.imageio.metadata.IIOInvalidTreeException;
 import javax.imageio.metadata.IIOMetadata;
@@ -37,11 +41,11 @@ public class GifSequenceWriter {
         IIOMetadataNode root = (IIOMetadataNode) metadata.getAsTree(metaFormatName);
 
         IIOMetadataNode graphicsControlExtensionNode = getNode(root, "GraphicControlExtension");
-        graphicsControlExtensionNode.setAttribute("disposalMethod", "none");
-        graphicsControlExtensionNode.setAttribute("userInputFlag", "FALSE");
-        graphicsControlExtensionNode.setAttribute("transparentColorFlag", "FALSE");
+        //graphicsControlExtensionNode.setAttribute("disposalMethod", "none");
+        //graphicsControlExtensionNode.setAttribute("userInputFlag", "FALSE");
+        //graphicsControlExtensionNode.setAttribute("transparentColorFlag", "FALSE");
         graphicsControlExtensionNode.setAttribute("delayTime", Integer.toString(delay / 10));
-        graphicsControlExtensionNode.setAttribute("transparentColorIndex", "0");
+        //graphicsControlExtensionNode.setAttribute("transparentColorIndex", "0");
 
         IIOMetadataNode appExtensionsNode = getNode(root, "ApplicationExtensions");
         IIOMetadataNode child = new IIOMetadataNode("ApplicationExtension");
